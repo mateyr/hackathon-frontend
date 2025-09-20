@@ -7,7 +7,9 @@ import { createJSONStorage, persist } from "zustand/middleware";
 type IAuthStore = {
   isAuthenticated: boolean;
   token?: AuthToken;
-  LogIn: (data: AuthToken) => void;
+  first_name?: string;
+  last_name?: string;
+  LogIn: (data: AuthToken & { first_name?: string; last_name?: string }) => void;
   LogOut: () => void;
 };
 
@@ -16,15 +18,22 @@ export const useAuthStore = create<IAuthStore>()(
     (set) => ({
       isAuthenticated: false,
       token: undefined,
-      LogIn: (token: AuthToken) => set({ isAuthenticated: true, token }),
+      first_name: undefined,
+      last_name: undefined,
+      LogIn: (data) => set({
+        isAuthenticated: true,
+        token: data,
+        first_name: data.first_name,
+        last_name: data.last_name
+      }),
       LogOut: () => {
-        set({ isAuthenticated: false, token: undefined });
+        set({ isAuthenticated: false, token: undefined, first_name: undefined, last_name: undefined });
       },
     }),
     {
       name: "auth-storage",
       storage: createJSONStorage(() => zustandStorage),
-      partialize: (state) => ({ token: state.token }),
+      partialize: (state) => ({ token: state.token, first_name: state.first_name, last_name: state.last_name }),
     }
   )
 );
