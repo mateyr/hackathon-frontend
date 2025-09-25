@@ -5,7 +5,6 @@
 - [Acerca de la aplicación](#acerca-de-la-aplicación)
 - [Tecnologías](#tecnologías)
 - [Instalación](#instalación)
-- [Uso](#uso)
 
 ## Acerca de la aplicación 📚
 
@@ -32,7 +31,7 @@ Esta aplicación permite a los usuarios **iniciar sesión**, **visualizar métri
    ``` bash
    npm install
    ```
-4.Iniciar el proyecto con Expo
+4. Iniciar el proyecto con Expo
    ```bash
    npx expo start --dev-client --tunnel
    ```
