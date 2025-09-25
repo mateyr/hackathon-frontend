@@ -1,24 +1,32 @@
-# Hackathon Frontend 👋
+Frontend Hackathon
+Tabla de Contenidos 📑
+Acerca de la aplicación
+Tecnologías
+Instalación
+Uso
+Acerca de la aplicación 📚
+Proyecto de frontend para el Hackathon. Esta aplicación permite a los usuarios iniciar sesión, visualizar métricas cardíacas en tiempo real, acceder a paneles médicos y navegar por diferentes secciones de manera intuitiva y visualmente atractiva.
 
-## Get started
-
-1. Install dependencies
-
-   ```bash
-   npm install
-   ```
-
-2. Start the app
-
-   ```bash
-   npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+Tecnologías ☕️ ⚛️
+React Native ⚛️
+Expo 🚀
+Zustand 🗂️
+Axios 🔗
+React Native Vector Icons 🎨
+Expo Linear Gradient 🌈
+React Native Safe Area Context 📱
+Instalación ⚙️
+Tener instalado Node.js >= 18
+Instalar Expo CLI globalmente:
+Clonar este repositorio
+Instalar dependencias:
+(Opcional) Instalar fuentes personalizadas:
+Coloca los archivos .ttf en assets/fonts
+Carga las fuentes usando expo-font en tu app
+Iniciar el servidor de desarrollo:
+Escanea el código QR con la app de Expo Go o ejecuta en un emulador.
+Uso 🚦
+Inicia sesión con tus credenciales.
+Visualiza métricas cardíacas y paneles médicos.
+Navega entre las diferentes secciones usando la barra inferior.
+Personaliza tu experiencia y accede a accesos rápidos.
