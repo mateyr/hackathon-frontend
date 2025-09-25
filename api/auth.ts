@@ -17,7 +17,7 @@ type LoginResponse = {
 };
 
 export const LogInApi = async (props: LoginProps): Promise<LoginResponse> => {
-  const url = "api/v1/login";
+  const url = "auth/login";
   const formBody = new URLSearchParams({
     username: props.username,
     password: props.password,
