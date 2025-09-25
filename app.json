@@ -34,6 +34,18 @@
             "backgroundColor": "#000000"
           }
         }
+      ],
+      [
+        "expo-font",
+        {
+          "fonts": [
+            "./assets/fonts/AvenirLTProBook.otf",
+            "./assets/fonts/AvenirLTProHeavy.otf",
+            "./assets/fonts/AvenirLTProMedium.otf",
+            "./assets/fonts/AvenirLTProLight.otf",
+            "./assets/fonts/AvenirLTProRoman.otf"
+          ]
+        }
       ]
     ],
     "experiments": {
