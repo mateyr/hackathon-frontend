@@ -16,7 +16,6 @@ Esta aplicación permite a los usuarios **iniciar sesión**, **visualizar métri
 
 - **React Native** ⚛️  
 - **Expo** 🚀  
-- **Zustand** 🗂️  
 - **Axios** 🔗  
 - **React Native Vector Icons** 🎨  
 - **Expo Linear Gradient** 🌈  
