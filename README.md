@@ -1,76 +1,34 @@
-Frontend Hackathon
-Tabla de Contenidos 📑
+# Frontend Hackathon
 
-Acerca de la aplicación
+## Tabla de Contenidos 📑
 
-Tecnologías
+- [Acerca de la aplicación](#acerca-de-la-aplicación)
+- [Tecnologías](#tecnologías)
+- [Instalación](#instalación)
+- [Uso](#uso)
 
-Instalación
+## Acerca de la aplicación 📚
 
-Uso
+Proyecto de frontend para el **Hackathon**.  
+Esta aplicación permite a los usuarios **iniciar sesión**, **visualizar métricas cardíacas en tiempo real**, acceder a **paneles médicos interactivos** y navegar por diferentes secciones mediante una interfaz **intuitiva y atractiva**.  
 
-Acerca de la aplicación 📚
+## Tecnologías ☕️ ⚛️
 
-Proyecto de frontend para el Hackathon.
-Esta aplicación ofrece a los usuarios una interfaz moderna e intuitiva, que permite iniciar sesión, visualizar métricas cardíacas en tiempo real, acceder a paneles médicos interactivos y navegar entre secciones con una experiencia fluida y visualmente atractiva.
+- **React Native** ⚛️  
+- **Expo** 🚀  
+- **Zustand** 🗂️  
+- **Axios** 🔗  
+- **React Native Vector Icons** 🎨  
+- **Expo Linear Gradient** 🌈  
+- **React Native Safe Area Context** 📱  
 
-Tecnologías ☕️ ⚛️
+## Instalación ⚙️
 
-React Native ⚛️
-
-Expo 🚀
-
-Zustand 🗂️
-
-Axios 🔗
-
-React Native Vector Icons 🎨
-
-Expo Linear Gradient 🌈
-
-React Native Safe Area Context 📱
-
-Instalación ⚙️
-
-Tener instalado Node.js >= 18
-
-Instalar Expo CLI globalmente:
-
-npm install -g expo-cli
-
-
-Clonar este repositorio:
+1. Tener instalado **Node.js >= 18**  
+2. Instalar **Expo CLI** de forma global:  
+   ```bash
+   npm install -g expo-cli
 
 git clone <url-del-repo>
 cd frontend-hackathon
 
-
-Instalar dependencias:
-
-npm install
-
-
-(Opcional) Instalar fuentes personalizadas:
-
-Coloca los archivos .ttf en assets/fonts
-
-Carga las fuentes en tu app con expo-font
-
-Iniciar el servidor de desarrollo:
-
-npx expo start
-
-
-Escanea el código QR con la app de Expo Go o ejecútalo en un emulador.
-
-Uso 🚦
-
-Inicia sesión con tus credenciales.
-
-Visualiza métricas cardíacas en tiempo real.
-
-Explora paneles médicos dinámicos.
-
-Navega entre las diferentes secciones desde la barra inferior.
-
-Personaliza tu experiencia y accede a funciones rápidas.
