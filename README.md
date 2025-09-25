@@ -28,7 +28,15 @@ Esta aplicación permite a los usuarios **iniciar sesión**, **visualizar métri
 2. Instalar **Expo CLI** de forma global:  
    ```bash
    npm install -g expo-cli
+   ```
+3. Instalar las dependencias
+   ``` bash
+   npm install
+   ```
+4.Iniciar el proyecto con Expo
+   ```bash
+   npx expo start --dev-client --tunnel
+   ```
 
-git clone <url-del-repo>
-cd frontend-hackathon
+
 
