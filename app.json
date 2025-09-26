@@ -34,17 +34,23 @@
             "backgroundColor": "#000000"
           }
         }
+      ],
+      [
+        "expo-font",
+        {
+          "fonts": [
+            "./assets/fonts/AvenirLTProBook.otf",
+            "./assets/fonts/AvenirLTProHeavy.otf",
+            "./assets/fonts/AvenirLTProMedium.otf",
+            "./assets/fonts/AvenirLTProLight.otf",
+            "./assets/fonts/AvenirLTProRoman.otf"
+          ]
+        }
       ]
     ],
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true
-    },
-    "extra": {
-      "router": {},
-      "eas": {
-        "projectId": "81722900-14eb-4737-b571-d3ddbc6bbc3e"
-      }
     }
   }
 }

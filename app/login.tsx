@@ -14,7 +14,7 @@ import {
 } from "react-native";
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Text, ImageBackground, Image, Dimensions } from "react-native";
-import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import { MaterialIcons } from '@expo/vector-icons';
 import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
 
 // Colores basados en tu paleta
@@ -101,35 +101,45 @@ export default function Login() {
           <FontAwesome5 name="heartbeat" size={36} color={Colors.error} style={[styles.floatIcon, { bottom: 40, right: 50 }]} />
           {/* Inputs y botones directamente sobre fondo */}
           <View style={{width: '100%', alignItems: 'center', marginTop: 10}}>
-            <View style={[styles.inputFinalWrapper, errors.email && styles.inputFinalError, {backgroundColor: 'rgba(255,255,255,0.85)', borderWidth: 0}]}> 
-              <MaterialIcons name="alternate-email" size={24} color={Colors.primaryLight} style={styles.inputFinalIcon} />
-              <TextInput
-                style={styles.inputFinal}
-                value={email}
-                onChangeText={setEmail}
-                placeholder="Correo electrónico"
-                placeholderTextColor={Colors.outline}
-                keyboardType="email-address"
-                autoCapitalize="none"
-              />
+            <View style={{width: '90%', marginBottom: 8}}>
+              <View style={{flexDirection: 'row', alignItems: 'center', marginBottom: 2}}>
+                <MaterialIcons name="alternate-email" size={20} color={Colors.primaryLight} style={{marginRight: 6}} />
+                <Text style={{color: Colors.primary, fontWeight: 'bold', fontSize: 15}}>Correo</Text>
+              </View>
+              <View style={[styles.inputFinalWrapper, errors.email && styles.inputFinalError, {backgroundColor: Colors.background, borderWidth: 0}]}> 
+                <TextInput
+                  style={styles.inputFinal}
+                  value={email}
+                  onChangeText={setEmail}
+                  placeholder="Correo electrónico"
+                  placeholderTextColor={Colors.outline}
+                  keyboardType="email-address"
+                  autoCapitalize="none"
+                />
+              </View>
             </View>
             {errors.email && (
               <Text style={styles.errorFinal}>{errors.email}</Text>
             )}
-            <View style={[styles.inputFinalWrapper, errors.password && styles.inputFinalError, {backgroundColor: 'rgba(255,255,255,0.85)', borderWidth: 0}]}> 
-              <MaterialIcons name="lock" size={24} color={Colors.primaryLight} style={styles.inputFinalIcon} />
-              <TextInput
-                style={styles.inputFinal}
-                value={password}
-                onChangeText={setPassword}
-                placeholder="Contraseña"
-                placeholderTextColor={Colors.outline}
-                secureTextEntry={!showPassword}
-                autoCapitalize="none"
-              />
-              <TouchableOpacity onPress={() => setShowPassword(!showPassword)}>
-                <MaterialIcons name={showPassword ? "visibility-off" : "visibility"} size={24} color={Colors.primaryLight} />
-              </TouchableOpacity>
+            <View style={{width: '90%', marginBottom: 8}}>
+              <View style={{flexDirection: 'row', alignItems: 'center', marginBottom: 2}}>
+                <MaterialIcons name="lock" size={20} color={Colors.primaryLight} style={{marginRight: 6}} />
+                <Text style={{color: Colors.primary, fontWeight: 'bold', fontSize: 15}}>Contraseña</Text>
+              </View>
+              <View style={[styles.inputFinalWrapper, errors.password && styles.inputFinalError, {backgroundColor: Colors.background, borderWidth: 0}]}> 
+                <TextInput
+                  style={styles.inputFinal}
+                  value={password}
+                  onChangeText={setPassword}
+                  placeholder="Contraseña"
+                  placeholderTextColor={Colors.outline}
+                  secureTextEntry={!showPassword}
+                  autoCapitalize="none"
+                />
+                <TouchableOpacity onPress={() => setShowPassword(!showPassword)}>
+                  <MaterialIcons name={showPassword ? "visibility-off" : "visibility"} size={20} color={Colors.primaryLight} />
+                </TouchableOpacity>
+              </View>
             </View>
             {errors.password && (
               <Text style={styles.errorFinal}>{errors.password}</Text>

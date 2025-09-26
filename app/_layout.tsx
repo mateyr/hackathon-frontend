@@ -4,6 +4,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import axios from "axios";
 import { Stack } from "expo-router";
 import { PaperProvider } from "react-native-paper";
+import { SafeAreaProvider } from "react-native-safe-area-context";
 
 export default function RootLayout() {
   const isAuthenticated = useAuthStore((state) => state.isAuthenticated);
@@ -13,16 +14,18 @@ export default function RootLayout() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <PaperProvider theme={theme}>
-        <Stack screenOptions={{ headerShown: false }}>
-          <Stack.Protected guard={isAuthenticated}>
-            <Stack.Screen name="(app)" />
-          </Stack.Protected>
-          <Stack.Protected guard={!isAuthenticated}>
-            <Stack.Screen name="login" />
-          </Stack.Protected>
-        </Stack>
-      </PaperProvider>
+      <SafeAreaProvider>
+        <PaperProvider theme={theme}>
+          <Stack screenOptions={{ headerShown: false }}>
+            <Stack.Protected guard={isAuthenticated}>
+              <Stack.Screen name="(app)" />
+            </Stack.Protected>
+            <Stack.Protected guard={!isAuthenticated}>
+              <Stack.Screen name="login" />
+            </Stack.Protected>
+          </Stack>
+        </PaperProvider>
+      </SafeAreaProvider>
     </QueryClientProvider>
   );
 }

@@ -10,12 +10,7 @@ export const useLogin = () => {
     mutationFn: LogInApi,
     onSuccess: ({ data }) => {
       // Invalidate and refetch
-      // data debe contener first_name y last_name
-      LogIn({
-        ...data,
-        first_name: data.first_name,
-        last_name: data.last_name
-      });
+      LogIn(data);
       queryClient.invalidateQueries({ queryKey: ["LogInApi"] });
     },
     onError: (error: any) => {

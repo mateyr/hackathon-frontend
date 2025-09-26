@@ -1,4 +1,52 @@
-import { DefaultTheme } from "react-native-paper";
+import { configureFonts, DefaultTheme } from "react-native-paper";
+
+const fontConfig = {
+  displaySmall: {
+    fontFamily: "AvenirLTProSemiBold",
+  },
+  displayMedium: {
+    fontFamily: "AvenirLTProBold",
+  },
+  displayLarge: {
+    fontFamily: "AvenirLTProHeavy",
+  },
+  headlineSmall: {
+    fontFamily: "AvenirLTProMedium",
+  },
+  headlineMedium: {
+    fontFamily: "AvenirLTProSemiBold",
+  },
+  headlineLarge: {
+    fontFamily: "AvenirLTProBold",
+  },
+  titleSmall: {
+    fontFamily: "AvenirLTProMedium",
+  },
+  titleMedium: {
+    fontFamily: "AvenirLTProSemiBold",
+  },
+  titleLarge: {
+    fontFamily: "AvenirLTProBold",
+  },
+  labelSmall: {
+    fontFamily: "AvenirLTProRoman",
+  },
+  labelMedium: {
+    fontFamily: "AvenirLTProRoman",
+  },
+  labelLarge: {
+    fontFamily: "AvenirLTProRoman",
+  },
+  bodySmall: {
+    fontFamily: "AvenirLTProLight",
+  },
+  bodyMedium: {
+    fontFamily: "AvenirLTProBook",
+  },
+  bodyLarge: {
+    fontFamily: "AvenirLTProBook",
+  },
+};
 
 export const theme = {
   ...DefaultTheme,
@@ -10,7 +58,7 @@ export const theme = {
     onPrimaryContainer: "rgb(0, 30, 47)",
     secondary: "rgb(80, 96, 110)",
     onSecondary: "rgb(255, 255, 255)",
-    secondaryContainer: "rgb(211, 229, 245)",
+    secondaryContainer: "transparent",
     onSecondaryContainer: "rgb(12, 29, 41)",
     tertiary: "rgb(101, 89, 123)",
     onTertiary: "rgb(255, 255, 255)",
@@ -45,6 +93,7 @@ export const theme = {
     onSurfaceDisabled: "rgba(26, 28, 30, 0.38)",
     backdrop: "rgba(43, 49, 55, 0.4)",
   },
+  fonts: configureFonts({ config: fontConfig }),
 };
 
-export default {};
+export default theme;

@@ -1,24 +1,40 @@
-# Hackathon Frontend 👋
+# Frontend Hackathon
 
-## Get started
+## Tabla de Contenidos 📑
 
-1. Install dependencies
+- [Acerca de la aplicación](#acerca-de-la-aplicación)
+- [Tecnologías](#tecnologías)
+- [Instalación](#instalación)
 
+## Acerca de la aplicación 📚
+
+Proyecto de frontend para el **Hackathon**.  
+Esta aplicación permite a los usuarios **iniciar sesión**, **visualizar métricas cardíacas en tiempo real**, acceder a **paneles médicos interactivos** y navegar por diferentes secciones mediante una interfaz **intuitiva y atractiva**.  
+
+## Tecnologías ☕️ ⚛️
+
+- **React Native** ⚛️  
+- **Expo** 🚀  
+- **Axios** 🔗  
+- **React Native Vector Icons** 🎨  
+- **Expo Linear Gradient** 🌈  
+- **React Native Safe Area Context** 📱  
+
+## Instalación ⚙️
+
+1. Tener instalado **Node.js >= 18**  
+2. Instalar **Expo CLI** de forma global:  
    ```bash
+   npm install -g expo-cli
+   ```
+3. Instalar las dependencias
+   ``` bash
    npm install
    ```
-
-2. Start the app
-
+4. Iniciar el proyecto con Expo
    ```bash
-   npx expo start
+   npx expo start --dev-client --tunnel
    ```
 
-In the output, you'll find options to open the app in a
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).

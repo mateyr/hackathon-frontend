@@ -12,15 +12,13 @@ type LoginResponse = {
     access_token: string;
     token_type: string;
     expires_in: number;
-    first_name: string;
-    last_name: string;
   };
   message: string;
 };
 
 export const LogInApi = async (props: LoginProps): Promise<LoginResponse> => {
-  const baseUrl = process.env.EXPO_PUBLIC_API_URL || "http://localhost:8000";
-  const url = `${baseUrl}/api/v1/login`;
+  const API_URL = process.env.EXPO_PUBLIC_API_URL;
+  const url = `${API_URL}/api/v1/auth/login`;
   const formBody = new URLSearchParams({
     username: props.username,
     password: props.password,
@@ -35,11 +33,7 @@ export const LogInApi = async (props: LoginProps): Promise<LoginResponse> => {
 
     return {
       success: true,
-      data: {
-        ...response.data,
-        first_name: response.data.first_name,
-        last_name: response.data.last_name
-      },
+      data: response.data,
       message: "Login successful",
     };
   } catch (error) {
