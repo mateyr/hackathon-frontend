@@ -1,5 +1,12 @@
-import { StyleSheet, View } from "react-native";
-import { Badge, IconButton, Text, useTheme } from "react-native-paper";
+import { Image, StyleSheet, View } from "react-native";
+import {
+  Badge,
+  Button,
+  Card,
+  IconButton,
+  Text,
+  useTheme,
+} from "react-native-paper";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function Home() {
@@ -15,14 +22,13 @@ export default function Home() {
               fonts: { titleLarge: { fontSize: 20, fontWeight: "700" } },
             }}
           >
-            Hola, Rodian Matey !
+            Hola, Rodian Matey!
           </Text>
           <Text variant="labelLarge">¿Cómo te encuentras hoy?</Text>
         </View>
         <View style={[styles.notificationContainer]}>
           <IconButton
             icon="bell-circle"
-            // containerColor={theme.colors.secondary}
             iconColor={theme.colors.primary}
             size={46}
             style={{ margin: 0 }}
@@ -36,6 +42,56 @@ export default function Home() {
           </Badge>
         </View>
       </View>
+
+      {/* Card principal */}
+      <Card style={[styles.card, { backgroundColor: theme.colors.primary }]}>
+        <View style={styles.cardContainer}>
+          {/* Título */}
+          <Text
+            variant="titleLarge"
+            style={{
+              color: theme.colors.onPrimary,
+              fontWeight: "700",
+            }}
+            numberOfLines={1}
+            ellipsizeMode="tail"
+          >
+            Tu salud, siempre al alcance
+          </Text>
+
+          {/* Row con texto y imagen */}
+          <View style={styles.rowContainer}>
+            <View style={styles.textContainer}>
+              <Text
+                variant="bodyMedium"
+                style={{ color: theme.colors.onPrimary, marginTop: 6 }}
+              >
+                Agenda citas virtuales con especialistas.
+              </Text>
+              <Text
+                variant="bodyMedium"
+                style={{ color: theme.colors.onPrimary, marginBottom: 12 }}
+              >
+                Atención médica 24/7 con doctores.
+              </Text>
+              <Button
+                mode="contained"
+                buttonColor={theme.colors.background}
+                textColor={theme.colors.primary}
+                onPress={() => {}}
+                style={{ alignSelf: "flex-start" }}
+              >
+                Reservar cita
+              </Button>
+            </View>
+
+            <Image
+              source={require("../../assets/images/doctor-book-appoiment.png")}
+              style={styles.image}
+            />
+          </View>
+        </View>
+      </Card>
     </SafeAreaView>
   );
 }
@@ -57,5 +113,29 @@ const styles = StyleSheet.create({
     position: "absolute",
     top: 5,
     right: 5,
+  },
+  card: {
+    borderRadius: 16,
+    marginHorizontal: 16,
+    marginBottom: 16,
+    elevation: 4,
+  },
+  cardContainer: {
+    flexDirection: "column",
+    padding: 16,
+  },
+  rowContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    marginTop: 12,
+  },
+  textContainer: {
+    flex: 1,
+    marginRight: -10,
+    paddingRight: 12,
+  },
+  image: {
+    width: 150,
+    height: 150,
   },
 });
