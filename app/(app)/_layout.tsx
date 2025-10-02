@@ -1,9 +1,9 @@
-import AntDesign from "@expo/vector-icons/AntDesign";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import FontAwesome6 from "@expo/vector-icons/FontAwesome6";
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 import { CommonActions } from "@react-navigation/native";
 import { Tabs } from "expo-router";
+import { Text } from "react-native";
 import { BottomNavigation, useTheme } from "react-native-paper";
 
 export default function Layout() {
@@ -20,9 +20,16 @@ export default function Layout() {
           safeAreaInsets={insets}
           style={{
             backgroundColor: "white",
+            borderTopWidth: 1,
+            borderTopColor: "#E5E7EB",
+            elevation: 8,
+            shadowColor: "#000",
+            shadowOffset: { width: 0, height: -2 },
+            shadowOpacity: 0.05,
+            shadowRadius: 8,
           }}
           activeColor={theme.colors.primary}
-          inactiveColor={theme.colors.onSurfaceVariant}
+          inactiveColor="#9CA3AF"
           onTabPress={({ route, preventDefault }) => {
             const event = navigation.emit({
               type: "tabPress",
@@ -43,10 +50,10 @@ export default function Layout() {
             descriptors[route.key].options.tabBarIcon?.({
               focused,
               color,
-              size: 24,
+              size: 26,
             }) || null
           }
-          getLabelText={({ route }) => {
+          renderLabel={({ route, focused, color }) => {
             const { options } = descriptors[route.key];
             const label =
               typeof options.tabBarLabel === "string"
@@ -55,7 +62,19 @@ export default function Layout() {
                 ? options.title
                 : route.name;
 
-            return label;
+            return (
+              <Text
+                style={{
+                  color,
+                  fontSize: 14,
+                  fontWeight: focused ? "600" : "400",
+                  // marginTop: 6,
+                  textAlign: "center",
+                }}
+              >
+                {label}
+              </Text>
+            );
           }}
         />
       )}
@@ -65,7 +84,7 @@ export default function Layout() {
         options={{
           title: "Inicio",
           tabBarIcon: ({ color }) => (
-            <FontAwesome6 size={28} name="house-medical" color={color} />
+            <FontAwesome6 size={26} name="house-medical" color={color} solid />
           ),
         }}
       />
@@ -74,7 +93,7 @@ export default function Layout() {
         options={{
           title: "Citas",
           tabBarIcon: ({ color }) => (
-            <FontAwesome size={28} name="calendar" color={color} />
+            <FontAwesome size={26} name="calendar" color={color} solid />
           ),
         }}
       />
@@ -83,7 +102,7 @@ export default function Layout() {
         options={{
           title: "Doctores",
           tabBarIcon: ({ color }) => (
-            <FontAwesome6 size={28} name="user-doctor" color={color} />
+            <FontAwesome6 size={26} name="user-doctor" color={color} solid />
           ),
         }}
       />
@@ -93,7 +112,7 @@ export default function Layout() {
           title: "Historial",
           tabBarIcon: ({ color }) => (
             <MaterialCommunityIcons
-              size={28}
+              size={26}
               name="file-document"
               color={color}
             />
@@ -105,7 +124,7 @@ export default function Layout() {
         options={{
           title: "Perfil",
           tabBarIcon: ({ color }) => (
-            <AntDesign size={28} name="profile" color={color} />
+            <FontAwesome size={26} name="user" color={color} solid />
           ),
         }}
       />
