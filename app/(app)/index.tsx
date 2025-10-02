@@ -13,129 +13,237 @@ export default function Home() {
   const theme = useTheme();
 
   return (
-    <SafeAreaView>
+    <SafeAreaView style={{ flex: 1, backgroundColor: theme.colors.background }}>
       <View style={styles.container}>
-        <View>
-          <Text
-            variant="titleLarge"
-            theme={{
-              fonts: { titleLarge: { fontSize: 20, fontWeight: "700" } },
-            }}
-          >
-            Hola, Rodian Matey!
-          </Text>
-          <Text variant="labelLarge">¿Cómo te encuentras hoy?</Text>
-        </View>
-        <View style={[styles.notificationContainer]}>
-          <IconButton
-            icon="bell-circle"
-            iconColor={theme.colors.primary}
-            size={46}
-            style={{ margin: 0 }}
-            onPress={() => {}}
-          />
-          <Badge
-            size={16}
-            style={[styles.badge, { backgroundColor: theme.colors.primary }]}
-          >
-            {1}
-          </Badge>
-        </View>
-      </View>
-
-      {/* Card principal */}
-      <Card style={[styles.card, { backgroundColor: theme.colors.primary }]}>
-        <View style={styles.cardContainer}>
-          {/* Título */}
-          <Text
-            variant="titleLarge"
-            style={{
-              color: theme.colors.onPrimary,
-              fontWeight: "700",
-            }}
-            numberOfLines={1}
-            ellipsizeMode="tail"
-          >
-            Tu salud, siempre al alcance
-          </Text>
-
-          {/* Row con texto y imagen */}
-          <View style={styles.rowContainer}>
-            <View style={styles.textContainer}>
-              <Text
-                variant="bodyMedium"
-                style={{ color: theme.colors.onPrimary, marginTop: 6 }}
-              >
-                Agenda citas virtuales con especialistas.
-              </Text>
-              <Text
-                variant="bodyMedium"
-                style={{ color: theme.colors.onPrimary, marginBottom: 12 }}
-              >
-                Atención médica 24/7 con doctores.
-              </Text>
-              <Button
-                mode="contained"
-                buttonColor={theme.colors.background}
-                textColor={theme.colors.primary}
+        <View style={styles.headerContainer}>
+          <View style={styles.greetingSection}>
+            <Text
+              variant="headlineSmall"
+              style={[styles.greeting, { color: theme.colors.onBackground }]}
+            >
+              Hola, Emorie 👋
+            </Text>
+            <Text
+              variant="bodyMedium"
+              style={[
+                styles.subGreeting,
+                { color: theme.colors.onSurfaceVariant },
+              ]}
+            >
+              ¿Cómo te encuentras hoy?
+            </Text>
+          </View>
+          <View style={styles.notificationWrapper}>
+            <View
+              style={[
+                styles.notificationButton,
+                {
+                  backgroundColor: theme.colors.primaryContainer,
+                  borderColor: theme.colors.primary,
+                },
+              ]}
+            >
+              <IconButton
+                icon="bell"
+                size={24}
+                iconColor={theme.colors.primary}
                 onPress={() => {}}
-                style={{ alignSelf: "flex-start" }}
+                style={styles.iconButton}
+              />
+              <Badge
+                style={[
+                  styles.badge,
+                  {
+                    backgroundColor: theme.colors.error,
+                  },
+                ]}
+                size={18}
               >
-                Reservar cita
-              </Button>
+                1
+              </Badge>
             </View>
-
-            <Image
-              source={require("../../assets/images/doctor-book-appoiment.png")}
-              style={styles.image}
-            />
           </View>
         </View>
-      </Card>
+
+        <Card
+          style={[
+            styles.card,
+            { backgroundColor: theme.colors.primaryContainer },
+          ]}
+          elevation={2}
+        >
+          <View style={styles.cardContainer}>
+            <Text
+              variant="titleLarge"
+              style={[styles.cardTitle, { color: theme.colors.primary }]}
+            >
+              Tu salud, siempre al alcance
+            </Text>
+            <View style={styles.rowContainer}>
+              <View style={styles.textContainer}>
+                <View style={styles.featureItem}>
+                  <Text
+                    style={[styles.bullet, { color: theme.colors.primary }]}
+                  >
+                    •
+                  </Text>
+                  <Text
+                    variant="bodyMedium"
+                    style={[
+                      styles.featureText,
+                      { color: theme.colors.onPrimaryContainer },
+                    ]}
+                  >
+                    Agenda citas virtuales con especialistas
+                  </Text>
+                </View>
+
+                <View style={styles.featureItem}>
+                  <Text
+                    style={[styles.bullet, { color: theme.colors.primary }]}
+                  >
+                    •
+                  </Text>
+                  <Text
+                    variant="bodyMedium"
+                    style={[
+                      styles.featureText,
+                      { color: theme.colors.onPrimaryContainer },
+                    ]}
+                  >
+                    Atención médica 24/7 con doctores
+                  </Text>
+                </View>
+
+                <Button
+                  mode="contained"
+                  buttonColor={theme.colors.primary}
+                  textColor={theme.colors.onPrimary}
+                  onPress={() => {}}
+                  style={styles.ctaButton}
+                  labelStyle={styles.ctaButtonLabel}
+                  contentStyle={styles.ctaButtonContent}
+                >
+                  Reservar cita
+                </Button>
+              </View>
+
+              <View style={styles.imageContainer}>
+                <Image
+                  source={require("../../assets/images/doctor-book-appoiment.png")}
+                  style={styles.image}
+                />
+              </View>
+            </View>
+          </View>
+        </Card>
+      </View>
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
+    paddingTop: 8,
+  },
+  headerContainer: {
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    paddingHorizontal: 18,
-    paddingVertical: 24,
+    paddingHorizontal: 20,
+    paddingVertical: 16,
+    marginBottom: 6,
   },
-  notificationContainer: {
-    height: 62,
-    width: 62,
+  greetingSection: {
+    flex: 1,
+    gap: 4,
+  },
+  greeting: {
+    fontWeight: "700",
+    letterSpacing: -0.5,
+  },
+  subGreeting: {
+    opacity: 0.8,
+  },
+  notificationWrapper: {
+    marginLeft: 12,
+  },
+  notificationButton: {
+    borderRadius: 16,
+    borderWidth: 1.5,
     position: "relative",
+    overflow: "visible",
+  },
+  iconButton: {
+    margin: 0,
   },
   badge: {
     position: "absolute",
-    top: 5,
-    right: 5,
+    top: -4,
+    right: -4,
+    fontSize: 10,
+    fontWeight: "700",
+    minWidth: 18,
+    height: 18,
   },
   card: {
-    borderRadius: 16,
-    marginHorizontal: 16,
+    borderRadius: 20,
+    marginHorizontal: 20,
     marginBottom: 16,
-    elevation: 4,
   },
   cardContainer: {
-    flexDirection: "column",
-    padding: 16,
+    padding: 20,
+  },
+  cardTitle: {
+    fontWeight: "700",
+    marginBottom: 10,
+    lineHeight: 28,
   },
   rowContainer: {
     flexDirection: "row",
     alignItems: "center",
-    marginTop: 12,
+    gap: 8,
   },
   textContainer: {
     flex: 1,
-    marginRight: -10,
-    paddingRight: 12,
+    gap: 12,
+  },
+  featureItem: {
+    flexDirection: "row",
+    alignItems: "flex-start",
+    gap: 8,
+  },
+  bullet: {
+    fontSize: 20,
+    lineHeight: 20,
+    fontWeight: "700",
+  },
+  featureText: {
+    flex: 1,
+    lineHeight: 20,
+  },
+  ctaButton: {
+    alignSelf: "flex-start",
+    borderRadius: 12,
+    marginTop: 4,
+    elevation: 0,
+  },
+  ctaButtonLabel: {
+    fontWeight: "700",
+    fontSize: 14,
+    letterSpacing: 0.2,
+  },
+  ctaButtonContent: {
+    paddingHorizontal: 8,
+    paddingVertical: 4,
+  },
+  imageContainer: {
+    width: 140,
+    height: 160,
   },
   image: {
-    width: 150,
-    height: 150,
+    width: "100%",
+    height: "100%",
   },
 });
